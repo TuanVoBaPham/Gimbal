@@ -9,7 +9,6 @@ Mô tả yêu cầu bài toán mô hình hóa, điều khiển và mô phỏng h
 | `Bài tập hệ Gimbal VDT2026.docx` | Bối cảnh bài toán, dữ liệu đầu vào, yêu cầu thực hiện, sản phẩm cần nộp và bảng tham số |
 | `dataUAV_200kmh_1km.xlsx` | Bảng dữ liệu hành trình UAV và các cột tọa độ mục tiêu |
 
-Các yêu cầu ở phần 2, 3 và 6 lấy từ tài liệu Word. Cấu trúc bảng dữ liệu ở phần 4 được đối chiếu trực tiếp với Excel. Các giá trị tham số ở phần 5 lấy từ phụ lục tài liệu Word.
 
 ## 2. Bối cảnh và hai giai đoạn hoạt động
 
@@ -22,11 +21,8 @@ Theo mục **I. Đặt vấn đề** của đề bài, UAV cảm tử sử dụn
 | **Giai đoạn 1 — Hành trình** | Từ lúc phóng đến khi UAV bay đủ gần để camera nhận diện mục tiêu, giả sử ở khoảng cách **5 km**. Hệ điều khiển phải duy trì góc Gimbal cố định ở vị trí **0 độ so với trục dọc UAV**, bất chấp dao động của thân UAV. |
 | **Giai đoạn 2 — Homing** | Khi mục tiêu xuất hiện trong tầm nhìn, hệ thống chuyển sang chế độ tự dẫn. Gimbal liên tục điều chỉnh góc quay để hình ảnh mục tiêu nằm ở tâm khung hình, cung cấp thông tin dẫn đường cho UAV lao tới. |
 
-README giữ cách mô tả hai giai đoạn của đề bài; tài liệu nguồn không cung cấp thêm quy tắc chuyển chế độ hoặc phương trình điều khiển cụ thể.
 
 ## 3. Các nhiệm vụ cần thực hiện
-
-Nguồn: mục **III. Yêu cầu chi tiết** trong tài liệu Word.
 
 ### 3.1. Mô hình hóa động học và động lực học
 
@@ -98,19 +94,7 @@ Tên các cột được giữ nguyên theo Excel:
 | O | `Target_h` |
 | P | `Dist` |
 
-### 4.3. Những thông tin chưa được định nghĩa trong hai tệp
-
-- Bảng Excel không có cột thời gian riêng.
-- Dòng tiêu đề Excel không kèm đơn vị. Tài liệu Word không cung cấp bảng đơn vị tương ứng cho từng cột dữ liệu.
-- Tài liệu không nêu cụ thể hệ tọa độ hoặc quy ước dấu cho các thành phần vận tốc.
-- Tài liệu Word không định nghĩa riêng cột `Dist`.
-- Tài liệu Word ghi tên dữ liệu là `dataUAV_200km/h_1km.xlsx`; tên tệp thực tế được cung cấp là `dataUAV_200kmh_1km.xlsx`.
-
-README không gán thêm đơn vị, hệ tọa độ hoặc ý nghĩa chi tiết chưa được nguồn xác định cho các trường này.
-
 ## 5. Tham số hệ Gimbal và động cơ
-
-Nguồn: **Phụ lục — Bảng tham số gimbal và động cơ** trong tài liệu Word.
 
 ### 5.1. Nhóm động cơ trục AZ
 
@@ -140,8 +124,6 @@ Nguồn: **Phụ lục — Bảng tham số gimbal và động cơ** trong tài 
 | 17 | Mô men quán tính khung Az đối với trục Y | 0.618 × 10⁻³ kg·m² |
 | 18 | Mô men quán tính khung Az đối với trục Z | 0.68 × 10⁻³ kg·m² |
 
-**Ghi chú về tên tham số:** trong nhóm động cơ trục EL, các dòng 16–18 của tài liệu vẫn ghi “khung Az”. Bảng trên giữ nguyên cách ghi của nguồn, không tự sửa thành “khung EL”.
-
 ### 5.3. Quang học
 
 | STT trong đề bài | Tham số | Giá trị |
@@ -149,29 +131,4 @@ Nguồn: **Phụ lục — Bảng tham số gimbal và động cơ** trong tài 
 | 19 | Độ phân giải | 640 × 480 pixel |
 | 20 | Góc FOV | 8 độ |
 
-Tài liệu không chỉ rõ FOV là góc ngang, góc dọc hay góc chéo.
 
-## 6. Sản phẩm cần nộp
-
-Nguồn: mục **IV. Yêu cầu về sản phẩm** trong tài liệu Word.
-
-### 6.1. Tệp mô phỏng
-
-- Định dạng **`.slx`**.
-- Phải **Export ở phiên bản MATLAB 2021b trở xuống** để đảm bảo tương thích.
-- Code và mô hình nên được chú thích rõ ràng.
-
-### 6.2. Báo cáo
-
-Báo cáo ở định dạng **PDF hoặc Word**, gồm:
-
-1. Các phương trình toán học đã sử dụng để lập mô hình.
-2. Giải thích phương pháp thiết kế bộ điều khiển và cách chọn tham số.
-3. Đồ thị kết quả mô phỏng.
-4. Nhận xét và đánh giá chất lượng hệ thống.
-
-Đề bài không quy định số lượng đồ thị, chỉ tiêu sai số định lượng, giá trị ngưỡng đánh giá hoặc biểu mẫu báo cáo cụ thể.
-
-## 7. Thông tin hỗ trợ trong đề bài
-
-Hỗ trợ hướng dẫn và giải đáp thắc mắc qua Zalo: **Đoàn Hoàng**.
